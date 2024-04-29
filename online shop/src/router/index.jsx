@@ -4,6 +4,9 @@ import Home from "./Home";
 import Login from "./Login";
 import ProtectedRoute from "../layouts/ProtectedRoute";
 import Profile from "./Profile";
+import Products from "./Products";
+import ShoppingCart from "./ShoppingCart";
+import ProductDetail from "./ProductDetail";
 
 export default function Router() {
 
@@ -13,10 +16,13 @@ export default function Router() {
                 <Route element={<DefaultLayout />}>
                     <Route path='/' element={<Home />} />
                     <Route path='/login' element={<Login />} />
-                    <Route path='/overview' element={<h1>Overview</h1>} />
+                    <Route path='/products' element={<Products />}>
+                        <Route path=':productId' element={<ProductDetail />} />
+                        <Route index element={<>Please select a product on your left.</>} />
+                    </Route>
+                    <Route path='/cart' element={<ShoppingCart />} />
                     <Route element={<ProtectedRoute />}>
                         <Route path='/profile' element={<Profile />} />
-                        <Route path='/cart' element={<h1>Shopping Cart</h1>} />
                     </Route>
                     <Route path='*' element={<h1>Page not found</h1>} />
                 </Route>

@@ -17,6 +17,11 @@ export default function Header() {
       title: "Home",
       path: "/",
       isDisplayed: true,
+    }, 
+    {
+      title: "Products",
+      path: "/products",
+      isDisplayed: true,
     },
     {
       title: "Login",
@@ -30,8 +35,13 @@ export default function Header() {
     },
     {
       title: "Profile",
-      path: "/profile",
+      path: "/profile", 
       isDisplayed: isLoggedIn,
+    },
+    {
+      title: "Shopping Cart",
+      path: "/cart",
+      isDisplayed: true,
     },
   ];
 
