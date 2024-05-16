@@ -2,17 +2,16 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadProducts } from "../store/slices/productSlice";
 import { Link, Outlet } from "react-router-dom";
-import { api } from "../common/api";
+import { apiProducts } from "../common/api";
 
 export default function Products() {
   const dispatch = useDispatch();
-
   const products = useSelector((state) => state.product.products);
 
   const fetchProducts = async () => {
     try {
       // fetch products using axios
-      const res = await api.get("/products");
+      const res = await apiProducts.get();
       const data = res.data;
       console.log("response:", res);
       console.log("data:", data);
