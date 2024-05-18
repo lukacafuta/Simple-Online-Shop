@@ -32,10 +32,9 @@ export default function Products() {
   return (
     <MainContainerStyled>
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-        // <Link key={product.id} to={`/products/${product.id}`}>
-        //   {product.title}
-        // </Link>
+        <Link key={product.id} to={`/products/${product.id}`}>
+          <ProductCard key={product.id} product={product} />
+        </Link>
       ))}
       <Outlet />
     </MainContainerStyled>

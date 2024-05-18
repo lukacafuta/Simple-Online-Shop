@@ -16,8 +16,7 @@ export default function Router() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/productId" element={<ProductDetail />} />
-          {/* <Route index element={<>Please select a product on your left.</>} /> */}
+          <Route path="/products/:productId" element={<ProductDetail />} />
           <Route path="/cart" element={<ShoppingCart />} />
           <Route element={<ProtectedRoute />}>
             <Route path="/profile" element={<Profile />} />
