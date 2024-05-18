@@ -4,6 +4,7 @@ import { loadProducts } from "../store/slices/productSlice";
 import { Link, Outlet } from "react-router-dom";
 import { apiProducts } from "../common/api";
 import ProductCard from "../components/ProductCard";
+import { MainContainerStyled } from "../StyledComponents/Prodcuts";
 
 export default function Products() {
   const dispatch = useDispatch();
@@ -29,17 +30,14 @@ export default function Products() {
   }, []);
 
   return (
-    <div id="products">
-      <aside>
-        <h1>Our products:</h1>
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-          // <Link key={product.id} to={`/products/${product.id}`}>
-          //   {product.title}
-          // </Link>
-        ))}
-      </aside>
+    <MainContainerStyled>
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
+        // <Link key={product.id} to={`/products/${product.id}`}>
+        //   {product.title}
+        // </Link>
+      ))}
       <Outlet />
-    </div>
+    </MainContainerStyled>
   );
 }
