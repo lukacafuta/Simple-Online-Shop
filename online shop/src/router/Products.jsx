@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadProducts } from "../store/slices/productSlice";
 import { Link, Outlet } from "react-router-dom";
 import { apiProducts } from "../common/api";
+import ProductCard from "../components/ProductCard";
 
 export default function Products() {
   const dispatch = useDispatch();
@@ -32,9 +33,10 @@ export default function Products() {
       <aside>
         <h1>Our products:</h1>
         {products.map((product) => (
-          <Link key={product.id} to={`/products/${product.id}`}>
-            {product.title}
-          </Link>
+          <ProductCard key={product.id} product={product} />
+          // <Link key={product.id} to={`/products/${product.id}`}>
+          //   {product.title}
+          // </Link>
         ))}
       </aside>
       <Outlet />
