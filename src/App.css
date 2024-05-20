@@ -2,7 +2,8 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 #root {
@@ -19,13 +20,13 @@ footer {
   align-items: center;
   text-align: center;
   padding: 1rem;
-  background-color: #967E76;
+  background-color: #967e76;
   color: aliceblue;
 }
 
 header {
   padding: 1rem;
-  background-color: #967E76;
+  background-color: #967e76;
   color: aliceblue;
   display: flex;
   justify-content: space-around;
@@ -46,13 +47,13 @@ header > a {
 }
 
 header > a.active {
-  background-color: #D7C0AE;
+  background-color: #d7c0ae;
   color: aliceblue;
   text-decoration: underline;
-  text-decoration-color: #967E76;
+  text-decoration-color: #967e76;
   text-decoration-thickness: 0.2rem;
   text-underline-offset: 0.2rem;
-} 
+}
 
 #root > main {
   flex-grow: 1;
@@ -62,7 +63,7 @@ header > a.active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #EEE3CB;
+  background-color: #eee3cb;
 }
 
 .page-centered {
@@ -84,35 +85,6 @@ header > a.active {
 
 .errorMessage {
   color: darkred;
-}
-
-#products {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: start;
-  gap: 2rem;
-}
-
-#products aside {
-  width: 40rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  gap: 0.5rem;
-}
-
-#products aside h1 {
-  font-weight: 300;
-}
-
-#products aside a {
-  padding: 1rem;
-  background-color: #9BABB8;
-  border-radius: 0.5rem;
-  color: black;
-  text-decoration: none;
 }
 
 #productDetail {
@@ -137,13 +109,13 @@ header > a.active {
 button {
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: #D7C0AE;
+  background-color: #d7c0ae;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #967E76;
+  background-color: #967e76;
 }
 
 #cart-container {
@@ -162,8 +134,8 @@ button:hover {
 }
 
 .shopping-cart-item img {
-  width: 60px; 
-  height: 60px; 
+  width: 60px;
+  height: 60px;
   margin-right: 10px;
 }
 
@@ -178,7 +150,6 @@ button:hover {
   font-weight: bold;
   margin-left: 1rem;
 }
-
 
 #total-price-container {
   font-weight: bold;

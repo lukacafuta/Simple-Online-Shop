@@ -15,8 +15,8 @@ export default function Products() {
       // fetch products using axios
       const res = await apiProducts.get();
       const data = res.data;
-      console.log("response:", res);
-      console.log("data:", data);
+      // console.log("response:", res);
+      // console.log("data:", data);
 
       // dispatch to store
       dispatch(loadProducts(data));
