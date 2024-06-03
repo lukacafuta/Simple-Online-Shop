@@ -7,6 +7,7 @@ import Profile from "./Profile";
 import Products from "./Products";
 import ShoppingCart from "./ShoppingCart";
 import ProductDetail from "./ProductDetail";
+import Registration from "./Registration";
 
 export default function Router() {
   return (
@@ -15,11 +16,12 @@ export default function Router() {
         <Route element={<DefaultLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Registration />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:productId" element={<ProductDetail />} />
-          <Route path="/cart" element={<ShoppingCart />} />
           <Route element={<ProtectedRoute />}>
             <Route path="/profile" element={<Profile />} />
+            <Route path="/cart" element={<ShoppingCart />} />
           </Route>
           <Route path="*" element={<h1>Page not found</h1>} />
         </Route>

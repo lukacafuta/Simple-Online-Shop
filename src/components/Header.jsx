@@ -17,7 +17,7 @@ export default function Header() {
       title: "Home",
       path: "/",
       isDisplayed: true,
-    }, 
+    },
     {
       title: "Products",
       path: "/products",
@@ -35,13 +35,18 @@ export default function Header() {
     },
     {
       title: "Profile",
-      path: "/profile", 
+      path: "/profile",
       isDisplayed: isLoggedIn,
+    },
+    {
+      title: "Registration",
+      path: "/registration",
+      isDisplayed: !isLoggedIn,
     },
     {
       title: "Shopping Cart",
       path: "/cart",
-      isDisplayed: true,
+      isDisplayed: isLoggedIn,
     },
   ];
 
@@ -51,7 +56,11 @@ export default function Header() {
         .filter((i) => i.isDisplayed)
         .map((i) => {
           if (i.action) {
-            return <a onClick={i.action} key={i.title}>{i.title}</a>;
+            return (
+              <a onClick={i.action} key={i.title}>
+                {i.title}
+              </a>
+            );
           } else {
             return (
               <NavLink to={i.path} key={i.title}>
