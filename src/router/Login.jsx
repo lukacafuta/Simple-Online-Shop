@@ -10,6 +10,7 @@ import {
   MainContainerStyled,
   TopRightSectionStyled,
 } from "../StyledComponents/LoginStyled";
+import { verifyToken } from "../common/verifyToken";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -33,19 +34,21 @@ export default function Login() {
       // store token locally
       localStorage.setItem("accessToken", res.data.access);
 
-      //dispatch access token and user detail to redux store
-      dispatch(login(res.data.access));
-      dispatch(loadUser(res.data.user));
-
-      // if successful, redirect user to their profile page
-      navigate("/profile");
+      const tokenVerified = await verifyToken(dispatch);
+      if (tokenVerified) {
+        //dispatch access token and user detail to redux store
+        dispatch(login(res.data.access));
+        dispatch(loadUser(res.data.user));
+        // if successful, redirect user to their profile page
+        navigate("/profile");
+      } else {
+        setLoginError("Token verification failed. Please try again.");
+      }
     } catch (error) {
       // if unsuccessful, show error
-      if (error.response?.data?.detail) {
-        setLoginError(error.response.data.detail);
-      } else {
-        setLoginError("Login was not successful");
-      }
+      setLoginError(
+        error.response?.data?.detail || "Login was not successfull"
+      );
       console.error(error);
     }
   };

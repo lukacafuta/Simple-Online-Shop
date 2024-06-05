@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { apiUser } from "./common/api";
 import Router from "./router";
@@ -7,7 +7,8 @@ import { login, logout } from "./store/slices/userSlice";
 
 function App() {
   const dispatch = useDispatch();
-  const validAccessToken = useSelector((state) => state.user.validAccessToken);
+  // const validAccessToken = useSelector((state) => state.user.validAccessToken);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const localToken = localStorage.getItem("accessToken");
@@ -18,14 +19,16 @@ function App() {
         .catch(() => {
           localStorage.removeItem("accessToken");
           dispatch(logout());
-        });
+        })
+        .finally(() => setLoading(false));
     } else {
       dispatch(logout());
+      setLoading(false);
     }
-  }, []);
+  }, [dispatch]);
 
-  if (validAccessToken === undefined) {
-    <>Loading...</>;
+  if (loading) {
+    return <>Loading...</>;
   } else {
     return <Router />;
   }
