@@ -19,9 +19,12 @@ export default function ProductDetail() {
 
   const [selectedProduct, setSelectedProduct] = useState(undefined);
   const [quantity, setQuantity] = useState(1);
+  const [showMessage, setShowMessage] = useState(false);
 
   const handleAddToCart = () => {
     dispatch(addItem({ product: selectedProduct, quantity }));
+    setShowMessage(true);
+    setTimeout(() => setShowMessage(false), 3000); // hide message after 3 seconds
     console.log(`added ${quantity} ${selectedProduct.title}(s) to the cart`);
   };
 
@@ -75,6 +78,7 @@ export default function ProductDetail() {
             Go to cart
           </ButtonStyled>
         </ButtonsContainer>
+        {showMessage && <div>Item added to cart</div>}
       </ProductDetailContainerStyled>
     );
   }
