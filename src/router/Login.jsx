@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { login, loadUser } from "../store/slices/userSlice";
 import { useNavigate } from "react-router-dom";
 import {
+  ButtonStyled,
   LoginFormStyled,
   MainContainerHeaderStyled,
   MainContainerStyled,
@@ -54,9 +55,9 @@ export default function Login() {
       <TopRightSectionStyled>
         <p>
           Don't have an account?{" "}
-          <button onClick={() => navigate("/registration")}>
+          <ButtonStyled onClick={() => navigate("/registration")}>
             Register here
-          </button>
+          </ButtonStyled>
         </p>
       </TopRightSectionStyled>
       <MainContainerHeaderStyled>
@@ -80,7 +81,7 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <p className="errorMessage">{loginError}</p>
-        <button type="submit">Log In</button>
+        <ButtonStyled type="submit">Log In</ButtonStyled>
       </LoginFormStyled>
     </MainContainerStyled>
   );

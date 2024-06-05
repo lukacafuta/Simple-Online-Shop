@@ -49,3 +49,15 @@ export const TopRightSectionStyled = styled.div`
     margin-left: 0.5rem;
   }
 `;
+
+export const ButtonStyled = styled.button`
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #d7c0ae;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #967e76;
+  }
+`;
