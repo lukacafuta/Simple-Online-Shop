@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { apiUser } from "../common/api";
 import { useState } from "react";
 import {
+  ButtonStyled,
   MainContainerHeaderStyled,
   MainContainerStyled,
   SignupFormStyled,
@@ -75,9 +76,9 @@ export default function Registration() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <button type="submit" className="submit-button">
+          <ButtonStyled type="submit" className="submit-button">
             Submit
-          </button>
+          </ButtonStyled>
         </SignupFormStyled>
       ) : (
         <SignupFormStyled onSubmit={handleRegisterSubmit}>
@@ -135,9 +136,9 @@ export default function Registration() {
               onChange={(e) => setLastName(e.target.value)}
             />
           </div>
-          <button type="submit" className="submit-button">
+          <ButtonStyled type="submit" className="submit-button">
             Register
-          </button>
+          </ButtonStyled>
         </SignupFormStyled>
       )}
     </MainContainerStyled>
