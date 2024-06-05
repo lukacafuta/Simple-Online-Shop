@@ -37,6 +37,9 @@ export default function Profile() {
       <>
         <h1>Profile page</h1>
         <p>Hi {user.first_name}, welcome to you profile page!</p>
+        <p>
+          <Link to={"/cart"}>Click here</Link> to see you shopping cart!
+        </p>
       </>
     );
   }
