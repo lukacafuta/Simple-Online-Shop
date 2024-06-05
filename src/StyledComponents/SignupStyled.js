@@ -9,7 +9,6 @@ export const MainContainerStyled = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  position: relative;
 `;
 
 export const MainContainerHeaderStyled = styled.div`
@@ -24,28 +23,14 @@ export const MainContainerHeaderStyled = styled.div`
   }
 `;
 
-export const LoginFormStyled = styled.form`
+export const SignupFormStyled = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   gap: 1rem;
 
-  .errorMessage {
+  /* .errorMessage {
     color: darkred;
-  }
-`;
-
-export const TopRightSectionStyled = styled.div`
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
-
-  p {
-    margin: 0;
-  }
-
-  button {
-    margin-left: 0.5rem;
-  }
+  } */
 `;

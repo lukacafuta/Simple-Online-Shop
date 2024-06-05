@@ -1,6 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { apiUser } from "../common/api";
 import { useState } from "react";
+import {
+  MainContainerHeaderStyled,
+  MainContainerStyled,
+  SignupFormStyled,
+} from "../StyledComponents/SignupStyled";
 
 export default function Registration() {
   //state variables to manage from inputs and registration
@@ -54,10 +59,12 @@ export default function Registration() {
   };
 
   return (
-    <div className="page-centered">
-      <p>Sign Up</p>
+    <MainContainerStyled>
+      <MainContainerHeaderStyled>
+        <h1>Sign Up</h1>
+      </MainContainerHeaderStyled>
       {!codeSent ? (
-        <form className="signup" onSubmit={handleCodeRequest}>
+        <SignupFormStyled onSubmit={handleCodeRequest}>
           <div className="input-container">
             <input
               type="email"
@@ -71,9 +78,9 @@ export default function Registration() {
           <button type="submit" className="submit-button">
             Submit
           </button>
-        </form>
+        </SignupFormStyled>
       ) : (
-        <form className="signup" onSubmit={handleRegisterSubmit}>
+        <SignupFormStyled onSubmit={handleRegisterSubmit}>
           <div className="input-container">
             <input
               type="text"
@@ -131,8 +138,8 @@ export default function Registration() {
           <button type="submit" className="submit-button">
             Register
           </button>
-        </form>
+        </SignupFormStyled>
       )}
-    </div>
+    </MainContainerStyled>
   );
 }

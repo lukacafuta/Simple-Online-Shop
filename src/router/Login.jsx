@@ -5,7 +5,7 @@ import { login, loadUser } from "../store/slices/userSlice";
 import { useNavigate } from "react-router-dom";
 import {
   LoginFormStyled,
-  MainContainerHeader,
+  MainContainerHeaderStyled,
   MainContainerStyled,
   TopRightSectionStyled,
 } from "../StyledComponents/LoginStyled";
@@ -59,9 +59,9 @@ export default function Login() {
           </button>
         </p>
       </TopRightSectionStyled>
-      <MainContainerHeader>
+      <MainContainerHeaderStyled>
         <h1>Log In</h1>
-      </MainContainerHeader>
+      </MainContainerHeaderStyled>
       <LoginFormStyled onSubmit={(e) => handleLoginSubmit(e)}>
         <input
           type="email"

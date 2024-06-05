@@ -66,14 +66,14 @@ header > a.active {
   background-color: #eee3cb;
 }
 
-.page-centered {
+/* .page-centered {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-}
+} */
 
 /* #loginForm {
   display: flex;
