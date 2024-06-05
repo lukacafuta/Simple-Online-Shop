@@ -23,7 +23,7 @@ export default function Registration() {
 
   const handleCodeRequest = async (e) => {
     e.preventDefault();
-    console.log("log run", e);
+    // console.log("log run", e);
     try {
       const res = await apiUser.post("auth/registration/", { email });
       //   console.log(res);
@@ -35,7 +35,7 @@ export default function Registration() {
 
   const handleRegisterSubmit = async (e) => {
     // console.log(codeSent);
-    console.log(email, userName, code, password);
+    // console.log(email, userName, code, password);
     e.preventDefault();
     // console.log("log run", e);
     if (password !== passwordRepeat) {
@@ -52,7 +52,7 @@ export default function Registration() {
         first_name: firstName,
         last_name: lastName,
       });
-      console.log(res);
+      // console.log(res);
       navigate("/login");
     } catch (error) {
       console.error(error);

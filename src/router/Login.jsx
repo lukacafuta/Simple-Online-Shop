@@ -30,7 +30,7 @@ export default function Login() {
         email: email,
         password: password,
       });
-      console.log(res);
+      // console.log(res);
       // store token locally
       localStorage.setItem("accessToken", res.data.access);
 

@@ -18,7 +18,7 @@ export default function Profile() {
       };
 
       const res = await apiUser.get("/users/me/", config);
-      console.log(res);
+      // console.log(res);
 
       dispatch(loadUser(res.data));
     } catch (error) {

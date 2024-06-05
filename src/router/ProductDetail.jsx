@@ -25,7 +25,7 @@ export default function ProductDetail() {
     dispatch(addItem({ product: selectedProduct, quantity }));
     setShowMessage(true);
     setTimeout(() => setShowMessage(false), 3000); // hide message after 3 seconds
-    console.log(`added ${quantity} ${selectedProduct.title}(s) to the cart`);
+    // console.log(`added ${quantity} ${selectedProduct.title}(s) to the cart`);
   };
 
   const incrementQuantity = () => {
