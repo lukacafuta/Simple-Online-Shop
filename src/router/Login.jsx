@@ -66,6 +66,10 @@ export default function Login() {
         <p className="errorMessage">{loginError}</p>
         <button type="submit">Log In</button>
       </form>
+      <p>
+        Don't have an account?{" "}
+        <button onClick={() => navigate("/registration")}>Register here</button>
+      </p>
     </div>
   );
 }
