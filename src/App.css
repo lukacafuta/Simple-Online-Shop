@@ -75,17 +75,17 @@ header > a.active {
   height: 100%;
 }
 
-#loginForm {
+/* #loginForm {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   gap: 1rem;
-}
+} */
 
-.errorMessage {
+/* .errorMessage {
   color: darkred;
-}
+} */
 
 #productDetail {
   margin-top: 10rem;

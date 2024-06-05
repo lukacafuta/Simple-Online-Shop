@@ -1,4 +1,4 @@
-import { ProductCardStyled } from "../StyledComponents/Prodcuts";
+import { ProductCardStyled } from "../StyledComponents/ProdcutsStyled";
 
 export default function ProductCard({ product }) {
   return (

@@ -3,6 +3,12 @@ import { apiUser } from "../common/api";
 import { useDispatch } from "react-redux";
 import { login, loadUser } from "../store/slices/userSlice";
 import { useNavigate } from "react-router-dom";
+import {
+  LoginFormStyled,
+  MainContainerHeader,
+  MainContainerStyled,
+  TopRightSectionStyled,
+} from "../StyledComponents/LoginStyled";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -44,9 +50,19 @@ export default function Login() {
   };
 
   return (
-    <div className="page-centered">
-      <h1>Log In</h1>
-      <form onSubmit={(e) => handleLoginSubmit(e)} id="loginForm">
+    <MainContainerStyled>
+      <TopRightSectionStyled>
+        <p>
+          Don't have an account?{" "}
+          <button onClick={() => navigate("/registration")}>
+            Register here
+          </button>
+        </p>
+      </TopRightSectionStyled>
+      <MainContainerHeader>
+        <h1>Log In</h1>
+      </MainContainerHeader>
+      <LoginFormStyled onSubmit={(e) => handleLoginSubmit(e)}>
         <input
           type="email"
           placeholder="Email"
@@ -65,11 +81,7 @@ export default function Login() {
         />
         <p className="errorMessage">{loginError}</p>
         <button type="submit">Log In</button>
-      </form>
-      <p>
-        Don't have an account?{" "}
-        <button onClick={() => navigate("/registration")}>Register here</button>
-      </p>
-    </div>
+      </LoginFormStyled>
+    </MainContainerStyled>
   );
 }

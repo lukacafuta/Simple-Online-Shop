@@ -4,7 +4,7 @@ import { loadProducts } from "../store/slices/productSlice";
 import { Link, Outlet } from "react-router-dom";
 import { apiProducts } from "../common/api";
 import ProductCard from "../components/ProductCard";
-import { MainContainerStyled } from "../StyledComponents/Prodcuts";
+import { MainContainerStyled } from "../StyledComponents/ProdcutsStyled";
 
 export default function Products() {
   const dispatch = useDispatch();
