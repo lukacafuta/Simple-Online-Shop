@@ -5,7 +5,8 @@ import {
   increaseQuantity,
 } from "../store/slices/cartSlice";
 import {
-  CartButtons,
+  ButtonStyled,
+  CartButtonsContainer,
   CartContainerHeaderStyled,
   CartContainerStyled,
   CartItemStyled,
@@ -51,11 +52,17 @@ export default function ShoppingCart() {
             <div className="item-quantity">
               <label>Quantity:</label> {item.quantity}
             </div>
-            <CartButtons>
-              <button onClick={() => handleReduceQuantity(index)}>-</button>
-              <button onClick={() => handleIncreaseQuantity(index)}>+</button>
-              <button onClick={() => handleRemoveItem(index)}>Remove</button>
-            </CartButtons>
+            <CartButtonsContainer>
+              <ButtonStyled onClick={() => handleReduceQuantity(index)}>
+                -
+              </ButtonStyled>
+              <ButtonStyled onClick={() => handleIncreaseQuantity(index)}>
+                +
+              </ButtonStyled>
+              <ButtonStyled onClick={() => handleRemoveItem(index)}>
+                Remove
+              </ButtonStyled>
+            </CartButtonsContainer>
           </CartItemStyled>
         ))}
       </CartContainerStyled>

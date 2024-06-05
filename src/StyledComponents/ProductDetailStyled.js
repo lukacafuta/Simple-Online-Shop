@@ -1,15 +1,20 @@
 import styled from "styled-components";
 
-export const CartContainerStyled = styled.div`
+export const ProductDetailContainerStyled = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+
+  img {
+    width: 250px;
+    height: 250px;
+  }
 `;
 
-export const CartContainerHeaderStyled = styled.div`
+export const ProductContainerHeaderStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,28 +26,19 @@ export const CartContainerHeaderStyled = styled.div`
   }
 `;
 
-export const CartItemStyled = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-
-  img {
-    width: 100px;
-    height: 100px;
-    margin-right: 10px;
-  }
-
-  .item-price label,
-  .item-quantity label {
-    font-weight: bold;
-    margin-left: 1rem;
-  }
+export const ProductDescriptionStyled = styled.div`
+  width: 60%;
 `;
 
-export const CartButtonsContainer = styled.div`
+export const QuantitySelectorContainerStyled = styled.div`
   display: flex;
-  margin-left: 3rem;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 1rem;
+`;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  gap: 1rem;
 `;
 
 export const ButtonStyled = styled.button`
@@ -55,10 +51,4 @@ export const ButtonStyled = styled.button`
   &:hover {
     background-color: #967e76;
   }
-`;
-
-export const TotalContainerStyled = styled.div`
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-top: 2rem;
 `;
